@@ -1,7 +1,7 @@
 class AgeError < StandardError; 
-def initialize(message="Invalid age")
-  super(message)
-end
+# def initialize(message="Invalid age")
+#   super(message)
+# end
 end
 
 def valid_age
