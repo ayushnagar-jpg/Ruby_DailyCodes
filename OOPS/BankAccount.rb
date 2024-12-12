@@ -30,9 +30,9 @@ class BankAccount
     "Your current balance is #{@balance}"
   end
 
-  private
-  attr_accessor :balance
-  end
+  # private
+  # attr_accessor :balance
+  # end
 
   my_account = BankAccount.new(1000) #inital balance
 
@@ -45,3 +45,4 @@ class BankAccount
   puts my_account.withdraw(2000)
 
   puts my_account.display_balance
+end
