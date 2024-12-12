@@ -3,7 +3,6 @@
 #  Use nested exception handling to retry the input process if an error occurs.
 begin
 puts"Enter a Number:"
-
 number = gets.chomp.to_f
 raise ArgumentError , "Number must be positive" if number < 0
 
