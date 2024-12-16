@@ -1,42 +1,50 @@
-module Message
+# Create an interface Message with a method send_message. Then:
+# Implement two classes EmailMessage and SMSMessage that both implement the send_message method. EmailMessage should send an email, and SMSMessage should send a text message.
+# Write a function send_notification that takes an object of type Message and calls the send_message method.
+# Demonstrate polymorphism by calling send_notification with instances of both EmailMessage and SMSMessage.
+
+class Message
   def send_message
-    raise NotImplementedError, "You must implement the send_message method"
+    raise NotImplementedError, "method not to be used here"
   end
 end
 
+class EmailMessage < Message
+  def initialize(email, subject, body)
+    @recipient_email = email
+    @subject = subject
+    @body = body
+  end
+  def send_message
+    puts "Sending Email to #{@recipient_email}"
+    puts "Subject: #{@subject}"
+    puts "Body: #{@body}"
+    puts "Email sent successfully!"
+  end
+end
 
-class EmailMessage
-  include Message
+class SMSMessage < Message
+  def initialize(mobile_number, text)
+    @number = mobile_number
+    @text = text
+  end
 
   def send_message
-    puts "Sending an email: 'Your order has been confirmed.'"
+    puts "Sending SMS to #{@number}"
+    puts "Message: #{@text}"
+    puts "SMS sent !"
   end
 end
 
-class SMSMessage
-  include Message
-
-  def send_message
-    puts "Sending a text message: 'Your OTP is 123456.'"
+def send_notification(messages)
+  messages.each do |message|
+    message.send_message 
   end
 end
 
-def send_notification(message_object)
-  if message_object.respond_to?(:send_message)
-    message_object.send_message
-  else
-    raise ArgumentError, "Object does not implement the required send_message method"
-  end
-end
+email = EmailMessage.new("latherabhinav55@gmail.com", "Meeting Reminder", "Don't forget the session at 9 AM tomorrow.")
+sms = SMSMessage.new("7082959391", "Tommorow 9 am session")
 
-def test_polymorphic_messaging_system
-  email_message = EmailMessage.new
-  sms_message = SMSMessage.new
 
-  puts "Testing EmailMessage:"
-  send_notification(email_message) 
-
-  puts "\nTesting SMSMessage:"
-  send_notification(sms_message) 
-end
-test_polymorphic_messaging_system
+notifications = [email, sms]
+send_notification(notifications)
