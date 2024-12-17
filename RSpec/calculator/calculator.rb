@@ -16,3 +16,4 @@ class Calculator
     a / b.to_f
   end
 end
+      
