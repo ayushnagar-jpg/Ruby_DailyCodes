@@ -4,7 +4,7 @@ class Searching
     high = arr.length - 1
 
     while low <= high
-      mid = low + (high - low) / 2 # More efficient way to find mid to avoid overflow
+      mid = low + (high - low) / 2 
 
       if arr[mid] == target
         return mid
@@ -15,7 +15,7 @@ class Searching
       end
     end
 
-    -1 # Return -1 if target is not found
+    -1 
   end
 end
 
