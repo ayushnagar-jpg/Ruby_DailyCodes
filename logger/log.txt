@@ -1,0 +1,4 @@
+# Logfile created on 2024-12-20 10:32:20 +0530 by logger.rb/v1.6.3
+F, [2024-12-20T10:32:20.522333 #12248] FATAL -- : this is a fatal message
+W, [2024-12-20T10:32:20.522486 #12248]  WARN -- : this is a warning message
+E, [2024-12-20T10:32:20.522581 #12248] ERROR -- : this is an error message
