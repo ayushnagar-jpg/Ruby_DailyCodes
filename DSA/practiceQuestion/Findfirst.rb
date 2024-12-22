@@ -15,6 +15,7 @@ def first_occurance(arr,target)
   end
   return first
 end
+
 def last_occurance(arr,target)
   first = -1
   low = 0
