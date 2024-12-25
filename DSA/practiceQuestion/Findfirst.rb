@@ -17,7 +17,7 @@ def first_occurance(arr,target)
 end
 
 def last_occurance(arr,target)
-  first = -1
+  last = -1
   low = 0
   high = arr.length-1
 
