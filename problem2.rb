@@ -9,7 +9,7 @@ for i in 0...n
 end
 
 for i in 0...n
-    if numbers[i] % 3 = 1
+    if numbers[i] % 3 == 1
      next 
     else puts number[i]
     end
